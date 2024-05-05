@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой дипломный проект</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+<main>
+    <div class="row">
+        <div class="column">
+            <h2 class="card"> 2024</h2>
+            <div class = "row gx-5">
+                <h3 class = "card" style="card-sub"> Бакалавриат</h3>
+            <h4 class="card-content"> doc-1</h4>
+            <h4 class="card-content"> doc-2</h4>
+            <h4 class="card-content"> doc-3</h4>
+            <h4 class="card-content"> doc-4</h4>
+            </div>
+<!--            TODO Change gx-5 to proper gut-->
+            <div class = "row gx-5">
+                <h3 class = "card" style="card-sub"> Магистратура</h3>
+                <h4 class="card-content"> doc-1</h4>
+                <h4 class="card-content"> doc-2</h4>
+                <h4 class="card-content"> doc-3</h4>
+                <h4 class="card-content"> doc-4</h4>
+            </div>
+
+            <h2 class="card"> 2023</h2>
+            <h4 class="card-content"> doc-1</h4>
+            <h4 class="card-content"> doc-2</h4>
+            <h4 class="card-content"> doc-3</h4>
+            <h4 class="card-content"> doc-4</h4>
+
+        </div>
+
+        <div class="column">
+            <h2 class="card"> Приказы</h2>
+            <div class="container"> <h4>text</h4></div>
+            <h2 class="card"> Шаблоны</h2>
+            <div class="container"> <h4>text</h4></div>
+        </div>
+        <div class="column"></div>
+    </div>
+</main>
+
+</body>
+</html>

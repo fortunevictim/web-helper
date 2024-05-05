@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+<main>
+    <div>
+        <h2>Вход</h2>
+
+        <form id="loginForm" action="/login" method="post" class="registration-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="email-input" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" class="email-input" required>
+            <button type="submit" class="auth-button">Войти</button>
+            <button type="button" class="auth-button" id="forgotPasswordButton">Забыли пароль?</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <div th:if="${errorMessage}" class="error-message">
+        <p th:text="${errorMessage}"></p>
+    </div>
+</main>
+<script src="/scripts/login.js"></script>
+</body>
+</html>

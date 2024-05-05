@@ -1,0 +1,22 @@
+<div th:fragment="header">
+
+    <h1>NSU</h1>
+    <header>
+        <nav>
+            <ul class="a">
+                <li ><a href="/">Главная</a></li>
+                <li th:if="${!isAdmin}"><a href="/practice">Практика</a></li>
+                <li th:if="${!isAdmin}"><a href="/diploma">Дипломная работа</a></li>
+<!--                <li><a href="/archive">Архив</a></li>-->
+                <li th:if="${isAuthenticated}"><a href="/profile">Мой профиль</a></li>
+                <li th:if="${isAdmin}"><a href="/control">Панель управления</a></li>
+<!--                <li><a href="/control">Панель управления</a></li>-->
+                <ul class="b">
+                    <li th:if="${!isAuthenticated}"><a href="/register">Регистрация</a></li>
+                    <li th:if="${!isAuthenticated}"><a href="/login">Вход</a></li>
+                    <li th:if="${isAuthenticated}"><a href="/logout">Выход</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </header>
+</div>

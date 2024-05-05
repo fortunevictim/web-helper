@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+<main>
+    <div>
+        <h2>Регистрация</h2>
+        <form id="registrationForm" action="/register" method="post" class="registration-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="email-input" required>
+            <button type="submit" class="auth-button register-button">Зарегистрироваться</button>
+        </form>
+        <div id="message"></div>
+    </div>
+</main>
+<script src="/scripts/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой дипломный проект</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+<main>
+    <p>Увидели ошибку? <a href="/errmsg">Сообщите нам!</a></p>
+    <select id="studentProfileList" onchange="sendSelectedProfile(this.value)" >
+        <option value="">Выберите профиль</option>
+    </select>
+    <br>
+    <select id="studentList" onchange="sendSelectedStudent(this.value)" >
+        <option value="">Выберите студента</option>
+    </select>
+    <div class="row grid-container">
+        <!-- Первый ряд -->
+        <div class="column-control">
+            <p>ФИО студента</p>
+            <textarea type="text" id="studentFio" class="form-control" placeholder="ФИО студента"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Группа студента</p>
+            <textarea type="text" id="studentGroup" class="form-control" placeholder="Группа студента"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Научный руководитель</p>
+            <select id="supervisorsList" >
+                <option value="">Выберите научного руководителя</option>
+            </select>
+        </div>
+
+        <div class="column-control">
+            <p>Соруководитель</p>
+            <select id="coSupervisorsList" >
+                <option value="">Выберите соруководителя</option>
+            </select>
+        </div>
+    </div>
+    <!-- Второй ряд -->
+    <div class="row grid-container">
+        <div class="column-control">
+            <p>Тема ВКР</p>
+            <textarea type="text" id="thesis" class="form-control" placeholder="Тема ВКР"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Почта</p>
+            <textarea type="text" id="studentEmail" class="form-control" placeholder="email-адрес"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Руководитель практики от НГУ</p>
+            <select id="practiceSupervisorNSUList" >
+                <option value="">Выберите руководителя практики от НГУ</option>
+            </select>
+        </div>
+
+        <div class="column-control">
+            <p>Руководитель практики от организации</p>
+            <select id="practiceSupervisorOrgList" >
+                <option value="">Выберите руководителя практики от орг.</option>
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="row grid-container">
+        <div class="column-control">
+            <p>Приказ направления на практику</p>
+            <textarea type="text" id="practiceOrder" class="form-control" placeholder="Приказ"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Распоряжение об утв. тем ВКР</p>
+            <textarea type="text" id="thesisOrder" class="form-control" placeholder="Распоряжение"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Консультант</p>
+            <select id="consultantList" >
+                <option value="">Выберите консультанта</option>
+            </select>
+        </div>
+
+        <div class="column-control">
+            <p>Рецензент</p>
+            <select id="reviewerList" >
+                <option value="">Выберите рецензента</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row grid-container">
+        <div class="column-control">
+            <p>Наименование организации</p>
+            <textarea type="text" id="internshipPlaceShort" class="form-control" placeholder="Наименование организации"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Место прохождения практики (полное)</p>
+            <textarea type="text" id="internshipPlaceFull" class="form-control" placeholder="Место практики полное"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Место прохожедния практики</p>
+            <textarea type="text" id="internshipPlace" class="form-control" placeholder="Место практики"></textarea>
+        </div>
+
+        <div class="column-control">
+            <p>Профиль обучения</p>
+            <textarea type="text" id="studentProfile" class="form-control" placeholder="Профиль обучения"></textarea>
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="collectDataButton" class="error-button">Изменить данные</button>
+    </div>
+</main>
+
+
+<!-- Вызов внешнего файла JavaScript -->
+<script src="/scripts/control.js"></script>
+</body>
+</html>

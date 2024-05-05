@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+<main>
+    <div>
+        <h2>Сменить пароль</h2>
+
+        <form id="changePasswordForm" action="/change-password" method="post" class="registration-form">
+            <label for="newPassword">Новый пароль:</label>
+            <input type="password" id="newPassword" name="newPassword" class="email-input" required>
+            <label for="confirmPassword">Подтвердите пароль:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="email-input" required>
+            <button type="submit" class="auth-button">Сменить пароль</button>
+        </form>
+        <div id="message"></div>
+    </div>
+</main>
+<script src="/scripts/profile.js"></script>
+</body>
+</html>

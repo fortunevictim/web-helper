@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой дипломный проект</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div th:insert="blocks/header :: header"></div>
+<main>
+    <div class="row" th:if="${isAuthenticated}">
+        <div class="column">
+            <h2 class="card">О студенте</h2>
+            <h3 class="student-info-header" id="studentNameHeader1"></h3>
+            <h3 class="student-info-header" id="studentNameHeader2"></h3>
+
+            <h2 class="card"> О научном руководителе</h2>
+            <h3 class="student-info-header" id="supervisorNameHeader1"> ФИО: </h3>
+            <h3 class="student-info-header" id="supervisorNameHeader2"> Должность: </h3>
+            <h3 class="student-info-header" id="supervisorNameHeader3"> Ученая степень: </h3>
+            <h3 class="student-info-header" id="supervisorNameHeader4"> Ученое звание: </h3>
+
+            <h2 class="card">О руководителе от НГУ</h2>
+            <h3 class="student-info-header" id="supervisorNSUNameHeader1"> ФИО: </h3>
+            <h3 class="student-info-header" id="supervisorNSUNameHeader2"> Должность: </h3>
+            <h3 class="student-info-header" id="supervisorNSUNameHeader3"> Ученая степень: </h3>
+            <h3 class="student-info-header" id="supervisorNSUNameHeader4"> Ученое звание: </h3>
+
+            <h2 class="card">О руководителе от организации</h2>
+            <h3 class="student-info-header" id="supervisorOrgNameHeader1"> ФИО: </h3>
+            <h3 class="student-info-header" id="supervisorOrgNameHeader2"> Должность: </h3>
+            <h3 class="student-info-header" id="supervisorOrgNameHeader3"> Ученая степень: </h3>
+            <h3 class="student-info-header" id="supervisorOrgNameHeader4"> Ученое звание: </h3>
+        </div>
+
+
+        <div class="column">
+            <h2 class="card"> Отчет о практике</h2>
+            <div class="container" th:if="${isBachelor}">
+                <h3>Бакалавриат, 8 семестр</h3>
+                <button id="generateButton1">Сгенерировать</button>
+            </div>
+            <div th:if="${!isBachelor}">
+                <div class="container" th:if="${studentProfile == 'ТРПС'}">
+                    <h3>Магистратура, трпс, 4 семестр</h3>
+                    <button id="generateButton2" >Сгенерировать</button>
+                </div>
+                <div class="container" th:if="${studentProfile == 'КМиАД'}">
+                    <h3>Магистратура, мда, 4 семестр</h3>
+                    <button id="generateButton3" >Сгенерировать</button>
+                </div>
+            </div>
+            <h2 class="card"> Отзыв руководителя практики</h2>
+            <div class="container" th:if="${isBachelor}">
+                <h3>Бакалавриат, 8 семестр</h3>
+                <button id="generateButton7">Сгенерировать</button>
+            </div>
+            <div th:if="${!isBachelor}">
+                <div class="container" th:if="${studentProfile == 'ТРПС'}">
+                    <h3>Магистратура, трпс, 4 семестр</h3>
+                    <button id="generateButton8" >Сгенерировать</button>
+                </div>
+                <div class="container" th:if="${studentProfile == 'КМиАД'}">
+                    <h3>Магистратура, мда, 4 семестр</h3>
+                    <button id="generateButton9" >Сгенерировать</button>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <h2 class="card"> Индивидуальное задание</h2>
+            <div class="container" th:if="${isBachelor}">
+                <h3>Бакалавриант, 8 семестр</h3>
+                <button id="generateButton4">Сгенерировать</button>
+            </div>
+            <div th:if="${!isBachelor}">
+                <div class="container" th:if="${studentProfile == 'ТРПС'}">
+                    <h3>Магистратура, трпс, 4 семестр</h3>
+                    <button id="generateButton5" >Сгенерировать</button>
+                </div>
+                <div class="container" th:if="${studentProfile == 'КМиАД'}">
+                    <h3>Магистратура, мда, 4 семестр</h3>
+                    <button id="generateButton6" >Сгенерировать</button>
+                </div>
+            </div>
+            <h2 class="card"> Заявление на практику</h2>
+            <div class="container" th:if="${isBachelor}">
+                <h3>Бакалавриант, 8 семестр</h3>
+                <button id="generateButton10">Сгенерировать</button>
+            </div>
+            <div th:if="${!isBachelor}">
+                <div class="container" th:if="${studentProfile == 'ТРПС'}">
+                    <h3>Магистратура, трпс, 4 семестр</h3>
+                    <button id="generateButton11" >Сгенерировать</button>
+                </div>
+                <div class="container" th:if="${studentProfile == 'КМиАД'}">
+                    <h3>Магистратура, мда, 4 семестр</h3>
+                    <button id="generateButton12" >Сгенерировать</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div th:if="${!isAuthenticated}">
+        <h2 id="studentNameHeader">О практике</h2>
+        <p class="practice-text larger-text">
+            После регистрации на данной странице вы сможете ознакомиться с подробной информацией о Вашей практике.
+            <br>Если вы увидите ошибку в информации о себе, то уточните у научного руководителя или секретаря кафедры,
+            отправив <a href="/errmsg">форму об ошибке</a>.
+        </p>
+    </div>
+</main>
+    <script src="/scripts/scripts.js"></script>
+    <script src="/scripts/practice.js"></script>
+
+</body>
+</html>

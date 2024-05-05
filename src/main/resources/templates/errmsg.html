@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой дипломный проект</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+<main>
+    <div class="row">
+        <div class="column">
+            <h2 class="card"> В чем заключается ошибка?</h2>
+            <form class="error-form">
+                <textarea type="text" class="error-input" id="errorText" placeholder="Сообщение об ошибке"></textarea>
+                <button type="submit" class="error-button" id="sendButton">Отправить</button>
+                <div id="responseMessage" style="color: black;"></div>
+            </form>
+        </div>
+
+    </div>
+</main>
+<script src="/scripts/errmsg.js"></script>
+</body>
+</html>
